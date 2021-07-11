@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-import * as icons from './icons'
+// import * as icons from './icons'
+import {ArrowDownRight,ArrowLeft, Calendar} from 'test-juuust-react-icon'
 import Header from './components/Header'
 import IconWrapper from './components/IconWrapper'
 
@@ -13,14 +14,19 @@ const Container = styled.ul`
   padding: 0%;
   list-style: none;
 `
+console.log('123')
 
 class List extends React.Component {
+
   render() {
     return (
       <div>
         <Header/>
         <Container>
-          {
+       < ArrowDownRight></ArrowDownRight>
+        <ArrowLeft></ArrowLeft>
+        <Calendar></Calendar>
+          {/* {
             Object.keys(icons)
               .map((key, index) => {
                 const Icon = icons[key]
@@ -31,7 +37,7 @@ class List extends React.Component {
                   </IconWrapper>
                 </li>
               })
-          }
+          } */}
         </Container>
       </div>
     )
