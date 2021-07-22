@@ -14,7 +14,8 @@ const babelOptions = {
   "presets": [
     '@babel/preset-env',
     '@babel/preset-react'
-  ]
+  ],
+  "babelHelpers": "bundled"
 }
 
 module.exports = [
@@ -37,7 +38,8 @@ module.exports = [
       }),
       babel(babelOptions),
       replace({
-        'process.env.NODE_ENV': JSON.stringify( 'production' )
+        'process.env.NODE_ENV': JSON.stringify( 'production' ),
+         preventAssignment:true
       })
     ],
   },

@@ -1,39 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { withColor } from '../components/Icon';
 
-const Clock = props => {
-  const { color, size, ...otherProps } = props;
+const Clock = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill={color}
-      {...otherProps}
-    >
+    <>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M12 3a9 9 0 100 18 9 9 0 000-18zM1 12C1 5.925 5.925 1 12 1s11 4.925 11 11-4.925 11-11 11S1 18.075 1 12z"
+        d="M12 4.329a7.671 7.671 0 100 15.343 7.671 7.671 0 000-15.343zM2.527 12a9.471 9.471 0 1118.943 0 9.471 9.471 0 01-18.943 0zm9.471-6.043a.9.9 0 01.9.9v4.587l2.931 1.465a.9.9 0 11-.805 1.61l-3.428-1.714a.9.9 0 01-.498-.805V6.857a.9.9 0 01.9-.9z"
       ></path>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12 5a1 1 0 011 1v5.382l3.447 1.724a1 1 0 11-.894 1.788l-4-2A1 1 0 0111 12V6a1 1 0 011-1z"
-      ></path>
-    </svg>
+    </>
   );
 };
 
-Clock.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-Clock.defaultProps = {
-  color: 'currentColor',
-  size: '24'
-};
-
-export default Clock;
+Clock.displayName = 'Clock';
+export default withColor(Clock, { stroke: '#00112F', fillInColor: true });

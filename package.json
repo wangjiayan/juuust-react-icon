@@ -34,6 +34,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@material-ui/core": "^4.12.2",
     "juuust-react-icon": "^0.2.5",
     "normalize.css": "^8.0.1",
     "react": "^16.13.1",

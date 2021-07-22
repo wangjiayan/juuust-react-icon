@@ -1,39 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { withColor } from '../components/Icon';
 
-const BookOpen = props => {
-  const { color, size, ...otherProps } = props;
+const BookOpen = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill={color}
-      {...otherProps}
-    >
+    <>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M1 3a1 1 0 011-1h6a5 5 0 015 5v14a1 1 0 11-2 0 2 2 0 00-2-2H2a1 1 0 01-1-1V3zm10 14.536V7a3 3 0 00-3-3H3v13h6a4 4 0 012 .536z"
+        d="M2.527 4.286a.9.9 0 01.9-.9H8.57A4.329 4.329 0 0112 5.072a4.328 4.328 0 013.428-1.686h5.143a.9.9 0 01.9.9v12.857a.9.9 0 01-.9.9h-6a1.672 1.672 0 00-1.671 1.671.9.9 0 01-1.8 0 1.671 1.671 0 00-1.672-1.671h-6a.9.9 0 01-.9-.9V4.286zM11.1 16.672a3.472 3.472 0 00-1.672-.43h-5.1V5.187H8.57A2.529 2.529 0 0111.1 7.714v8.958zm1.8 0a3.472 3.472 0 011.671-.43h5.1V5.187h-4.243A2.528 2.528 0 0012.9 7.714v8.958z"
       ></path>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M12.464 3.464A5 5 0 0116 2h6a1 1 0 011 1v15a1 1 0 01-1 1h-7a2 2 0 00-2 2 1 1 0 11-2 0V7a5 5 0 011.464-3.536zM13 17.536A4 4 0 0115 17h6V4h-5a3 3 0 00-3 3v10.536z"
-      ></path>
-    </svg>
+    </>
   );
 };
 
-BookOpen.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-BookOpen.defaultProps = {
-  color: 'currentColor',
-  size: '24'
-};
-
-export default BookOpen;
+BookOpen.displayName = 'BookOpen';
+export default withColor(BookOpen, { stroke: '#00112F', fillInColor: true });
