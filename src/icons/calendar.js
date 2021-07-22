@@ -1,49 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { withColor } from '../components/Icon';
 
-const Calendar = props => {
-  const { color, size, ...otherProps } = props;
+const Calendar = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill={color}
-      {...otherProps}
-    >
+    <>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5 5a1 1 0 00-1 1v14a1 1 0 001 1h14a1 1 0 001-1V6a1 1 0 00-1-1H5zM2 6a3 3 0 013-3h14a3 3 0 013 3v14a3 3 0 01-3 3H5a3 3 0 01-3-3V6z"
+        d="M8.57 2.529a.9.9 0 01.9.9v.814h5.058v-.814a.9.9 0 011.8 0v.814h1.671a2.614 2.614 0 012.615 2.614v12a2.614 2.614 0 01-2.615 2.615H6a2.614 2.614 0 01-2.614-2.615v-12A2.614 2.614 0 016 4.243h1.672v-.814a.9.9 0 01.9-.9zm-.9 3.514H6a.814.814 0 00-.815.814v2.529h13.629V6.857a.814.814 0 00-.815-.814h-1.671v.814a.9.9 0 11-1.8 0v-.814H9.471v.814a.9.9 0 11-1.8 0v-.814zm11.144 5.143H5.185v7.671c0 .45.365.815.814.815h12c.45 0 .815-.365.815-.815v-7.671z"
       ></path>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M16 1a1 1 0 011 1v4a1 1 0 11-2 0V2a1 1 0 011-1z"
-      ></path>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M8 1a1 1 0 011 1v4a1 1 0 01-2 0V2a1 1 0 011-1z"
-      ></path>
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M2 10a1 1 0 011-1h18a1 1 0 110 2H3a1 1 0 01-1-1z"
-      ></path>
-    </svg>
+    </>
   );
 };
 
-Calendar.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-Calendar.defaultProps = {
-  color: 'currentColor',
-  size: '24'
-};
-
-export default Calendar;
+Calendar.displayName = 'Calendar';
+export default withColor(Calendar, { stroke: '#00112F', fillInColor: true });

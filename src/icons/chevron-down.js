@@ -1,34 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { withColor } from '../components/Icon';
 
-const ChevronDown = props => {
-  const { color, size, ...otherProps } = props;
+const ChevronDown = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width={size}
-      height={size}
-      viewBox="0 0 24 24"
-      fill={color}
-      {...otherProps}
-    >
+    <>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
-        d="M5.293 8.293a1 1 0 011.414 0L12 13.586l5.293-5.293a1 1 0 111.414 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414z"
+        d="M4.363 7.863a.9.9 0 011.273 0L12 14.227l6.363-6.364a.9.9 0 011.273 1.273l-7 7a.9.9 0 01-1.273 0l-7-7a.9.9 0 010-1.273z"
       ></path>
-    </svg>
+    </>
   );
 };
 
-ChevronDown.propTypes = {
-  color: PropTypes.string,
-  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
-};
-
-ChevronDown.defaultProps = {
-  color: 'currentColor',
-  size: '24'
-};
-
-export default ChevronDown;
+ChevronDown.displayName = 'ChevronDown';
+export default withColor(ChevronDown, { stroke: '#00112F', fillInColor: true });

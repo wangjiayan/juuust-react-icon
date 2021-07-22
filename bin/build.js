@@ -105,6 +105,17 @@ const appendToIconsIndex = ({ComponentName, name}) => {
 
 generateIconsIndex()
 
+
+const  checkDuplication =()=>{
+  const nameVols = Object.values(icons).map((item)=>item.name)
+  const nameUniqVols = [...new Set(nameVols)]
+  if (nameVols.length !== nameUniqVols.length) {
+    throw 'icons存在重复命名,请检查后重试'
+  }
+}
+
+
+checkDuplication()
 Object
   .keys(icons)
   .map(key => icons[key])

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
-// import * as icons from './icons'
-import {ArrowDownRight,ArrowLeft, Calendar} from 'test-juuust-react-icon'
+import * as icons from './icons'
+import {Calendar, LogOut} from './icons'
 import Header from './components/Header'
 import IconWrapper from './components/IconWrapper'
 
@@ -14,7 +14,6 @@ const Container = styled.ul`
   padding: 0%;
   list-style: none;
 `
-console.log('123')
 
 class List extends React.Component {
 
@@ -23,21 +22,20 @@ class List extends React.Component {
       <div>
         <Header/>
         <Container>
-       < ArrowDownRight></ArrowDownRight>
-        <ArrowLeft></ArrowLeft>
-        <Calendar></Calendar>
-          {/* {
+        <Calendar style={{ fontSize: 50 }} fillInColor iconColor="red" button></Calendar>
+        <LogOut  fillInColor iconColor="#fff"></LogOut>
+          {
             Object.keys(icons)
               .map((key, index) => {
                 const Icon = icons[key]
                 return <li key={index}>
                   <IconWrapper>
-                    <Icon/>
+                    <Icon button hoverColor="yellow" stroke="green"/>
                     <span>{key}</span>
                   </IconWrapper>
                 </li>
               })
-          } */}
+          }
         </Container>
       </div>
     )
