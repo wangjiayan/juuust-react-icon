@@ -4,7 +4,7 @@ import * as icons from './icons'
 import { Calendar, LogOut } from './icons'
 import Header from './components/Header'
 import IconWrapper from './components/IconWrapper'
-console.log(123)
+
 const Container = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -14,7 +14,6 @@ const Container = styled.ul`
   padding: 0%;
   list-style: none;
 `
-
 class List extends React.Component {
   render() {
     return (

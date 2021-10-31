@@ -19,6 +19,7 @@ module.exports = {
   ],
   plugins: ['prettier', 'react-hooks'],
   rules: {
-    'prettier/prettier': 'error'
+    'prettier/prettier': 'error',
+    'no-console': 'warn',
   }
 }
