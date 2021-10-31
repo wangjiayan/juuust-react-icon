@@ -27,10 +27,23 @@
     "generate": "sudo rm -rf src/icons && node bin/build.js",
     "build:bundle": "sudo rm -rf dist && node_modules/.bin/rollup --c ./build/rollup.config.bundle.js",
     "dev": "rollup -w -c ./build/rollup.config.dev.js",
-    "build": "rollup -c ./build/rollup.config.prod.js"
+    "build": "rollup -c ./build/rollup.config.prod.js",
+    "commit": "git-cz",
+    "precommit": "lint-staged",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ]
   },
   "config": {
-    "style": "fill"
+    "style": "fill",
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
   },
   "license": "MIT",
   "dependencies": {
@@ -54,12 +67,22 @@
     "@rollup/plugin-commonjs": "^14.0.0",
     "@rollup/plugin-node-resolve": "^8.4.0",
     "@rollup/plugin-replace": "^2.3.3",
+    "babel-eslint": "^10.1.0",
     "cheerio": "^1.0.0-rc.3",
+    "commitizen": "^4.2.4",
     "concurrently": "^4.1.1",
+    "cz-conventional-changelog": "^3.3.0",
     "dotenv": "^8.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.26.1",
     "figma-js": "^1.11.0",
     "fs-extra": "^9.0.1",
     "got": "^11.5.1",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
     "p-queue": "2.4.2",
     "prettier-eslint": "^9.0.0",
     "rollup": "^1.19.4",
